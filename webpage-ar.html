@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ar" class="scroll-smooth" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خالد دريس | مطور ويب ومصمم جرافيك</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Modern Professional (Off-white, Dark Slate, Accent Blue) -->
+    <!-- Application Structure Plan: A single-page portfolio designed as a narrative journey. It uses thematic sections (Hero, Skills, Career, Achievements) to guide the user from a high-level summary to detailed proof of impact. This structure is more engaging than a static document and better showcases a web developer's capabilities. Key interactions include an animated skills radar chart and a scroll-to-section navigation. -->
+    <!-- Visualization & Content Choices: Skills -> Goal: Compare -> Viz: Radar Chart -> Interaction: Animate on load, hover tooltips -> Justification: Visualizes multi-domain proficiency effectively -> Library: Chart.js. Experience -> Goal: Show Change -> Viz: Vertical Timeline -> Interaction: Hover highlight -> Justification: More engaging than a list -> Method: HTML/Tailwind. Key Metrics -> Goal: Inform/Impress -> Viz: Stat Cards -> Interaction: Count-up animation on scroll -> Justification: Highlights key achievements -> Method: HTML/Tailwind/JS. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .font-number {
+            font-family: 'Inter', sans-serif;
+        }
+        .accent-color {
+            color: #007bff;
+        }
+        .bg-accent-color {
+            background-color: #007bff;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            right: -0.625rem;
+            top: 0;
+            background-color: #007bff;
+            border: 4px solid #f8f9fa;
+        }
+        #experience.py-20.bg-white .timeline-item::before {
+            border-color: #fff;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">خالد دريس</div>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="#summary" class="text-gray-600 hover:text-blue-600 transition duration-300">الملخص</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition duration-300">المهارات</a>
+                <a href="#experience" class="text-gray-600 hover:text-blue-600 transition duration-300">الخبرة</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-blue-600 transition duration-300">الأعمال</a>
+                <a href="#education" class="text-gray-600 hover:text-blue-600 transition duration-300">التعليم</a>
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse">
+                 <a href="interactive_cv.html" class="text-gray-600 hover:text-blue-600 font-semibold transition duration-300">English</a>
+                <button id="contactBtn" class="bg-accent-color text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">تواصل معي</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-24 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-2 text-center md:text-right">
+                         <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">خالد دريس</h1>
+                         <p class="mt-4 text-xl md:text-2xl text-gray-600">مطور ويب ومصمم جرافيك</p>
+                         <div class="mt-8 flex justify-center md:justify-start space-x-4 space-x-reverse">
+                             <a href="https://linkedin.com/in/dsix" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
+                             <span class="text-gray-400">|</span>
+                             <a href="mailto:khaled97driss@gmail.com" class="text-blue-600 hover:underline">khaled97driss@gmail.com</a>
+                         </div>
+                    </div>
+                    <div class="order-1 md:order-1 flex justify-center">
+                        <img src="photo khaled.jpg" alt="Photo of Khaled Driss" class="w-64 h-64 rounded-full object-cover shadow-xl border-4 border-gray-100">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary" class="py-20">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-3xl font-bold mb-6">ملخص احترافي</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    مطور ويب ومصمم جرافيك متحمس للغاية، حاصل على درجة الماجستير في هندسة البيانات وتقنيات الويب. أجمع بين المهارات التقنية القوية في البرمجة وتطوير الواجهات الأمامية والتصميم الجرافيكي مع خبرة واسعة في التجارة الإلكترونية والتسويق الرقمي. لدي قدرة مثبتة على بناء علامات تجارية من الصفر، وزيادة المبيعات عبر الإنترنت، وإدارة المشاريع المعقدة، وأنا شغوف بإنشاء تجارب رقمية جذابة وسهلة الاستخدام.
+                </p>
+            </div>
+        </section>
+
+        <section id="achievements" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">الإنجازات الرئيسية</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <p class="text-5xl font-extrabold accent-color font-number" data-target="70000">0</p>
+                        <p class="mt-2 text-lg font-semibold text-gray-700">متابع على فيسبوك</p>
+                        <p class="text-gray-500">نمو عضوي لعلامة Jwaki التجارية.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <p class="text-5xl font-extrabold accent-color font-number" data-target="1000">0</p>
+                        <p class="mt-2 text-lg font-semibold text-gray-700">منتج تم بيعه</p>
+                        <p class="text-gray-500">من خلال متجر إلكتروني مُدار ذاتيًا.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <p class="text-5xl font-extrabold accent-color font-number" data-target="1200">0</p>
+                        <p class="mt-2 text-lg font-semibold text-gray-700">معتمر تم مساعدته</p>
+                        <p class="text-gray-500"> في موسم واحد.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">مجموعة مهاراتي</h2>
+                <p class="text-center text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+                    يقدم هذا المخطط تمثيلاً مرئيًا لكفاءاتي الأساسية عبر مجالات مختلفة. يسلط الضوء على خبرتي المتوازنة في التطوير التقني والتصميم الإبداعي والتسويق الاستراتيجي، مما يسمح لي بالتعامل مع المشاريع بشكل كلي.
+                </p>
+                <div class="chart-container">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl font-bold text-center mb-16">المسيرة المهنية</h2>
+                <p class="text-center text-lg text-gray-700 max-w-3xl mx-auto mb-16">
+                    يعكس مساري المهني رحلة من النمو، تجمع بين المهارات التقنية والخبرة العملية في الأعمال. من التخصص في صناعة السفر إلى إطلاق علامة تجارية للتجارة الإلكترونية وقيادة الاستراتيجية الرقمية، كل دور بنى على سابقه، وبلغ ذروته في مجموعة مهارات فريدة ومتعددة التخصصات.
+                </p>
+                <div class="relative border-r-2 border-blue-200 mr-4 md:mr-0">
+                    
+                    <div class="mb-10 mr-10 timeline-item">
+                        <span class="absolute -right-3.5 flex items-center justify-center w-7 h-7 bg-blue-100 rounded-full">
+                            <span class="w-3 h-3 bg-blue-600 rounded-full"></span>
+                        </span>
+                        <h3 class="text-lg font-semibold text-gray-900">مصمم ويب ومدير مجتمع</h3>
+                        <p class="block mb-2 text-sm font-normal leading-none text-gray-500">ستاروير | يناير 2025 – حتى الآن</p>
+                        <ul class="list-disc pr-5 text-gray-700 space-y-1">
+                            <li>قيادة تصميم وتطوير موقع الشركة الرسمي للتجارة الإلكترونية.</li>
+                            <li>إدارة كتالوج المنتجات الكامل عبر الإنترنت وتحسين صور المنتجات.</li>
+                            <li>تطوير وتنفيذ استراتيجية وسائل التواصل الاجتماعي لتعزيز تفاعل العلامة التجارية.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-10 mr-10 timeline-item">
+                        <h3 class="text-lg font-semibold text-gray-900">مستشار سفر</h3>
+                        <p class="block mb-2 text-sm font-normal leading-none text-gray-500">الزعيم للسياحة | سبتمبر 2024 – يناير 2025</p>
+                        <ul class="list-disc pr-5 text-gray-700 space-y-1">
+                            <li>لعب دورًا رئيسيًا في تنسيق باقات العمرة، ومساعدة أكثر من 1200 حاج.</li>
+                            <li>تصميم مواد ترويجية جذابة لتسويق باقات السفر.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-10 mr-10 timeline-item">
+                        <h3 class="text-lg font-semibold text-gray-900">مؤسس ومدير تجارة إلكترونية</h3>
+                        <p class="block mb-2 text-sm font-normal leading-none text-gray-500">علامة Jwaki التجارية | 2020 – 2023</p>
+                         <ul class="list-disc pr-5 text-gray-700 space-y-1">
+                            <li>تأسيس وتصميم الهوية التجارية لـ 'Jwaki' لمتجر إلكتروني.</li>
+                            <li>إدارة جميع جوانب المبيعات عبر الإنترنت، مما أدى إلى بيع أكثر من 1000 منتج.</li>
+                            <li>تطوير وتنفيذ حملات إعلانية مستهدفة على فيسبوك لزيادة حركة المرور والتحويلات.</li>
+                            <li>بناء وإدارة وجود العلامة التجارية على وسائل التواصل الاجتماعي، مما أدى إلى نمو صفحة الفيسبوك إلى أكثر من 70,000 متابع.</li>
+                        </ul>
+                    </div>
+
+                     <div class="mr-10 timeline-item">
+                        <h3 class="text-lg font-semibold text-gray-900">أخصائي خدمات العمرة</h3>
+                        <p class="block mb-2 text-sm font-normal leading-none text-gray-500">وكالة إنمد للسفر | 2018 – 2022</p>
+                         <ul class="list-disc pr-5 text-gray-700 space-y-1">
+                            <li>متخصص في إدارة باقات الحج والعمرة من الحجز إلى الخدمات اللوجستية.</li>
+                            <li>التعامل بخبرة مع عملية طلب التأشيرة الكاملة للحجاج.</li>
+                            <li>العمل كنقطة اتصال رئيسية للحجاج وعائلاتهم.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16">معرض الأعمال</h2>
+                <p class="text-center text-lg text-gray-700 max-w-3xl mx-auto mb-16">
+                    إليكم مجموعة من أعمالي الأخيرة. يعرض كل مشروع مزيجًا من التطوير التقني والتصميم الإبداعي، من بناء الهوية التجارية وتصميم الشعارات إلى تطوير مواقع التجارة الإلكترونية بالكامل. انقر على أي مشروع لرؤية المزيد من التفاصيل.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden group cursor-pointer" data-link="https://www.facebook.com/jwaki.dz" data-link-text="عرض الصفحة">
+                        <img src="jwaki.dz.jpg" alt="Jwaki Brand Identity" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">الهوية التجارية لـ Jwaki</h3>
+                            <p class="text-gray-600 text-sm mb-4">تصميم كامل للهوية التجارية والشعار لمتجر إلكتروني متخصص في حقائب اليد.</p>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold ml-2 px-2.5 py-0.5 rounded-full">علامة تجارية</span>
+                            <span class="inline-block bg-gray-100 text-gray-800 text-xs font-semibold ml-2 px-2.5 py-0.5 rounded-full">تصميم شعار</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden group cursor-pointer" data-link="https://starweardz.com">
+                        <img src="starwear.jpg" alt="STARWEAR E-commerce Website" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">موقع ستاروير للتجارة الإلكترونية</h3>
+                            <p class="text-gray-600 text-sm mb-4">تصميم وتطوير كامل لموقع تجارة إلكترونية متجاوب لعلامة تجارية أصلية للأحذية.</p>
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold ml-2 px-2.5 py-0.5 rounded-full">تطوير الويب</span>
+                            <span class="inline-block bg-gray-100 text-gray-800 text-xs font-semibold ml-2 px-2.5 py-0.5 rounded-full">تجارة إلكترونية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">التعليم</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-lg">ماجستير في هندسة البيانات وتقنيات الويب</h3>
+                        <p class="text-gray-600">جامعة فرحات عباس، سطيف</p>
+                        <p class="text-sm text-gray-500 mt-1">2018 – 2020</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-lg">شهادة ليسانس في الإعلام الآلي</h3>
+                        <p class="text-gray-600">جامعة فرحات عباس، سطيف</p>
+                        <p class="text-sm text-gray-500 mt-1">2015 – 2018</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md md:col-span-2">
+                        <h3 class="font-bold text-lg">شهادة في التسويق الرقمي</h3>
+                        <p class="text-gray-600">إليما للتكوين والاستشارات، باتنة</p>
+                        <p class="text-sm text-gray-500 mt-1">2021</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <div id="contactModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-sm text-center transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+            <h3 class="text-2xl font-bold mb-6 text-gray-800">تواصل معي</h3>
+            <div class="space-y-4">
+                <a href="mailto:khaled97driss@gmail.com" class="block w-full bg-accent-color text-white font-semibold px-4 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                    أرسل بريدًا إلكترونيًا
+                </a>
+                <a href="https://wa.me/213551117118" target="_blank" class="block w-full bg-green-500 text-white font-semibold px-4 py-3 rounded-lg hover:bg-green-600 transition duration-300">
+                    أرسل رسالة واتساب
+                </a>
+            </div>
+            <button id="closeModalBtn" class="mt-8 text-gray-500 hover:text-gray-800 transition duration-300">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="portfolioModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 p-4">
+        <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-2xl transform transition-all duration-300 scale-95 opacity-0" id="portfolio-modal-content">
+            <img id="portfolioModalImage" src="" alt="Portfolio Item" class="w-full h-64 object-cover rounded-md mb-4">
+            <h3 id="portfolioModalTitle" class="text-2xl font-bold mb-2 text-gray-800"></h3>
+            <p id="portfolioModalDescription" class="text-gray-700 mb-4"></p>
+            <div id="portfolioModalTags" class="mb-6"></div>
+            <a id="portfolioModalLink" href="#" target="_blank" class="hidden inline-block bg-accent-color text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300"></a>
+            <button id="closePortfolioModalBtn" class="mt-6 text-gray-500 hover:text-gray-800 transition duration-300 float-left">إغلاق</button>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+             <p>&copy; 2025 خالد دريس. جميع الحقوق محفوظة.</p>
+             <p class="text-sm text-gray-400 mt-2">تم تصميمه وبناؤه لعرض مهاراتي في تطوير الويب.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+            const skillsChart = new Chart(skillsCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['البرمجة', 'تطوير الويب', 'تصميم الجرافيك', 'التسويق الرقمي', 'التجارة الإلكترونية'],
+                    datasets: [{
+                        label: 'إتقان',
+                        data: [8, 9, 9, 8, 9],
+                        backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                        borderColor: 'rgba(0, 123, 255, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(0, 123, 255, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(0, 123, 255, 1)'
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 14,
+                                    weight: 'bold',
+                                    family: 'Cairo'
+                                },
+                                color: '#343a40'
+                            },
+                            ticks: {
+                                beginAtZero: true,
+                                max: 10,
+                                stepSize: 2,
+                                backdropColor: 'rgba(0, 0, 0, 0)',
+                                color: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            const counters = document.querySelectorAll('[data-target]');
+            const speed = 200;
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    const increment = Math.ceil(target / speed);
+                
+                    if (count < target) {
+                        counter.innerText = Math.min(count + increment, target);
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target.toLocaleString('en-US');
+                    }
+                };
+                updateCount();
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                       animateCounter(entry.target);
+                       observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+
+            const contactBtn = document.getElementById('contactBtn');
+            const contactModal = document.getElementById('contactModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const modalContent = document.getElementById('modal-content');
+
+            const openModal = () => {
+                contactModal.classList.remove('hidden');
+                contactModal.classList.add('flex');
+                setTimeout(() => {
+                    contactModal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95', 'opacity-0');
+                    modalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            };
+
+            const closeModal = () => {
+                modalContent.classList.remove('scale-100', 'opacity-100');
+                modalContent.classList.add('scale-95', 'opacity-0');
+                contactModal.classList.add('opacity-0');
+                setTimeout(() => {
+                    contactModal.classList.add('hidden');
+                    contactModal.classList.remove('flex');
+                }, 300);
+            };
+
+            contactBtn.addEventListener('click', openModal);
+            closeModalBtn.addEventListener('click', closeModal);
+            contactModal.addEventListener('click', (e) => {
+                if (e.target === contactModal) {
+                    closeModal();
+                }
+            });
+
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            const portfolioModal = document.getElementById('portfolioModal');
+            const portfolioModalContent = document.getElementById('portfolio-modal-content');
+            const closePortfolioModalBtn = document.getElementById('closePortfolioModalBtn');
+            const portfolioModalImage = document.getElementById('portfolioModalImage');
+            const portfolioModalTitle = document.getElementById('portfolioModalTitle');
+            const portfolioModalDescription = document.getElementById('portfolioModalDescription');
+            const portfolioModalTags = document.getElementById('portfolioModalTags');
+            const portfolioModalLink = document.getElementById('portfolioModalLink');
+
+            const openPortfolioModal = (item) => {
+                const imgSrc = item.querySelector('img').src;
+                const title = item.querySelector('h3').textContent;
+                const description = item.querySelector('p').textContent;
+                const tags = item.querySelectorAll('span');
+                const link = item.dataset.link;
+                const linkText = item.dataset.linkText || 'عرض الموقع المباشر';
+
+                portfolioModalImage.src = imgSrc;
+                portfolioModalTitle.textContent = title;
+                portfolioModalDescription.textContent = description;
+                
+                portfolioModalTags.innerHTML = '';
+                tags.forEach(tag => {
+                    const newTag = tag.cloneNode(true);
+                    newTag.classList.remove('mr-2');
+                    newTag.classList.add('ml-2');
+                    portfolioModalTags.appendChild(newTag);
+                });
+
+                if (link) {
+                    portfolioModalLink.href = link;
+                    portfolioModalLink.textContent = linkText;
+                    portfolioModalLink.classList.remove('hidden');
+} else {
+                    portfolioModalLink.classList.add('hidden');
+                }
+
+                portfolioModal.classList.remove('hidden');
+                portfolioModal.classList.add('flex');
+                setTimeout(() => {
+                    portfolioModal.classList.remove('opacity-0');
+                    portfolioModalContent.classList.remove('scale-95', 'opacity-0');
+                    portfolioModalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            };
+
+            const closePortfolioModal = () => {
+                portfolioModalContent.classList.remove('scale-100', 'opacity-100');
+                portfolioModalContent.classList.add('scale-95', 'opacity-0');
+                portfolioModal.classList.add('opacity-0');
+                setTimeout(() => {
+                    portfolioModal.classList.add('hidden');
+                    portfolioModal.classList.remove('flex');
+                }, 300);
+            };
+
+            portfolioItems.forEach(item => {
+                item.addEventListener('click', () => openPortfolioModal(item));
+            });
+
+            closePortfolioModalBtn.addEventListener('click', closePortfolioModal);
+            portfolioModal.addEventListener('click', (e) => {
+                if (e.target === portfolioModal) {
+                    closePortfolioModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
