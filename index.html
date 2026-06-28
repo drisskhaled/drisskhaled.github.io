@@ -1,332 +1,232 @@
+
+
+
+
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khaled Driss | E-commerce & Digital Operations</title>
+  <title>Khaled Driss | Creative CV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root, [data-theme="light"] {
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
-      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
-      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-surface-2: #fbfbf9; --color-surface-offset: #edeae5; --color-border: #d4d1ca;
-      --color-text: #28251d; --color-text-muted: #6f6d67; --color-text-faint: #9d9a93; --color-text-inverse: #f9f8f4;
-      --color-primary: #01696f; --color-primary-hover: #0c4e54; --color-primary-soft: #dbe8e6;
-      --radius-md: 0.5rem; --radius-lg: 0.75rem; --radius-xl: 1rem; --radius-full: 9999px;
-      --shadow-sm: 0 1px 2px rgba(20,20,20,.06); --shadow-md: 0 10px 30px rgba(20,20,20,.08);
-      --font-display: 'Instrument Serif', Georgia, serif; --font-body: 'Work Sans', Arial, sans-serif;
+    :root,[data-theme="light"]{
+      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;
+      --bg:#f5f2ee;--surface:#fffcf7;--surface-2:#efe8e0;--border:#d7cfc6;--text:#181513;--muted:#6c655d;--faint:#a1988e;--accent:#b01325;--accent-2:#1f1f1f;--accent-soft:#f5d9dd;--inverse:#fffaf6;
+      --radius-sm:.5rem;--radius-md:.9rem;--radius-lg:1.3rem;--radius-full:9999px;--shadow:0 20px 50px rgba(0,0,0,.10);
+      --font-display:'Bebas Neue', Impact, sans-serif;--font-body:'Manrope', Arial, sans-serif;
     }
-    [data-theme="dark"] {
-      --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d; --color-surface-offset: #2a2825; --color-border: #393836;
-      --color-text: #e2e0db; --color-text-muted: #b7b3aa; --color-text-faint: #8d887f; --color-text-inverse: #1b1a18;
-      --color-primary: #4f98a3; --color-primary-hover: #78b9c3; --color-primary-soft: #243336;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,.2); --shadow-md: 0 10px 30px rgba(0,0,0,.25);
+    [data-theme="dark"]{
+      --bg:#0d0d0f;--surface:#141417;--surface-2:#1d1d22;--border:#2c2c31;--text:#f4efe7;--muted:#b8b0a6;--faint:#7e776d;--accent:#e11d33;--accent-2:#f4efe7;--accent-soft:#2c1619;--inverse:#0d0d0f;--shadow:0 24px 60px rgba(0,0,0,.35);
     }
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;background:var(--color-bg);color:var(--color-text)}
-    img,svg{display:block;max-width:100%;height:auto}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit;cursor:pointer}
-    .container{width:min(1120px,calc(100% - 2rem));margin-inline:auto}
-    .skip-link{position:absolute;left:-999px;top:auto}.skip-link:focus{left:1rem;top:1rem;background:var(--color-primary);color:var(--color-text-inverse);padding:.75rem 1rem;border-radius:var(--radius-md);z-index:200}
-    .site-header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--color-bg) 84%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--color-border)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) 0;gap:var(--space-4)}
-    .brand{display:flex;align-items:center;gap:var(--space-3);font-weight:700}
-    .brand-mark{width:42px;height:42px;padding:8px;border-radius:12px;background:var(--color-surface);border:1px solid var(--color-border)}
-    .nav-links{display:flex;gap:var(--space-5);flex-wrap:wrap;font-size:var(--text-sm);color:var(--color-text-muted)}
-    .nav-actions{display:flex;align-items:center;gap:var(--space-3)}
-    .theme-toggle,.button,.button-ghost{min-height:44px;padding:.8rem 1rem;border-radius:var(--radius-full);border:1px solid var(--color-border);background:var(--color-surface);color:var(--color-text)}
-    .button{background:var(--color-primary);color:var(--color-text-inverse);border-color:var(--color-primary);font-weight:700}
-    .button:hover{background:var(--color-primary-hover)}
-    .button-ghost:hover,.theme-toggle:hover{background:var(--color-surface-offset)}
-    .hero{padding:clamp(4rem,8vw,7rem) 0 3rem}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--space-12);align-items:end}
-    .eyebrow{display:inline-flex;gap:.5rem;align-items:center;padding:.45rem .8rem;border-radius:var(--radius-full);background:var(--color-primary-soft);color:var(--color-primary);font-size:var(--text-sm);font-weight:600}
-    h1,h2,h3{margin:0;line-height:1.08}
-    h1{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:400;letter-spacing:-.03em}
-    h2{font-family:var(--font-display);font-size:var(--text-xl);font-weight:400;letter-spacing:-.02em}
-    h3{font-size:var(--text-lg);font-weight:700}
-    .lede{font-size:var(--text-lg);max-width:58ch;color:var(--color-text-muted);margin:var(--space-6) 0}
-    .hero-card,.card,.timeline-item,.contact-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm)}
-    .hero-card{padding:var(--space-8)}
-    .quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4);margin-top:var(--space-6)}
-    .quick-grid div{padding:var(--space-4);background:var(--color-surface-2);border-radius:var(--radius-lg);border:1px solid var(--color-border)}
-    .label{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-faint);margin-bottom:.4rem}
-    .value{font-weight:700}
-    section{padding:var(--space-12) 0}
-    .section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:var(--space-8);align-items:start;margin-bottom:var(--space-8)}
-    .section-copy{color:var(--color-text-muted);max-width:65ch}
-    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-5)}
-    .card{padding:var(--space-6)}
-    .stat-num{font-size:clamp(2rem,1.5rem + 2vw,3.5rem);font-weight:800;color:var(--color-primary);line-height:1}
-    .chips,.skill-list{display:flex;flex-wrap:wrap;gap:.75rem}
-    .chip{padding:.6rem .9rem;border-radius:var(--radius-full);background:var(--color-surface-2);border:1px solid var(--color-border);font-size:var(--text-sm)}
-    .experience{display:grid;gap:var(--space-5)}
-    .timeline-item{padding:var(--space-6);position:relative;overflow:hidden}
-    .timeline-item::after{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--color-primary)}
-    .role-meta{display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;color:var(--color-text-muted);font-size:var(--text-sm);margin:.75rem 0 1rem}
-    .timeline-item ul{margin:0;padding-left:1.2rem;color:var(--color-text-muted)}
-    .timeline-item li+li{margin-top:.5rem}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5)}
-    .contact-card{padding:var(--space-8);display:grid;grid-template-columns:1.2fr .8fr;gap:var(--space-6);align-items:start}
-    .contact-links{display:grid;gap:var(--space-3);font-size:var(--text-sm)}
-    .muted{color:var(--color-text-muted)}
-    .footer{padding:var(--space-8) 0 var(--space-12);color:var(--color-text-faint);font-size:var(--text-sm)}
-    @media (max-width: 920px){
-      .hero-grid,.section-head,.contact-card,.two-col{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr}
-    }
-    @media (max-width: 720px){
-      .nav{align-items:flex-start;flex-direction:column}
-      .nav-links{gap:var(--space-3)}
-      .quick-grid{grid-template-columns:1fr}
-    }
-    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+    *,*:before,*:after{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at top right, rgba(225,29,51,.14), transparent 30%),radial-gradient(circle at left center, rgba(225,29,51,.08), transparent 25%),var(--bg);color:var(--text);font-family:var(--font-body);font-size:var(--text-base);line-height:1.6}
+    a{text-decoration:none;color:inherit} img,svg{display:block;max-width:100%;height:auto} button{font:inherit;cursor:pointer}
+    .container{width:min(1160px,calc(100% - 2rem));margin:auto} .skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:var(--accent);padding:.8rem 1rem;border-radius:var(--radius-sm);z-index:999;color:white}
+    .header{position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(13,13,15,.7);backdrop-filter:blur(16px)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0}.brand{display:flex;align-items:center;gap:.9rem}.logo{width:48px;height:48px;border-radius:14px;border:1px solid var(--border);background:linear-gradient(135deg,var(--accent-soft),transparent 70%),var(--surface);padding:8px}
+    .brand-name{font-family:var(--font-display);font-size:1.8rem;letter-spacing:.06em}.brand-sub{font-size:var(--text-xs);color:var(--muted);text-transform:uppercase;letter-spacing:.14em}
+    .links{display:flex;gap:1.25rem;flex-wrap:wrap;color:var(--muted);font-size:var(--text-sm)}
+    .cta-row{display:flex;gap:.8rem;align-items:center}.btn,.btn-alt,.theme{min-height:44px;padding:.9rem 1.1rem;border-radius:var(--radius-full);border:1px solid var(--border)} .btn{background:var(--accent);color:white;font-weight:800;border-color:transparent}.btn-alt,.theme{background:var(--surface);color:var(--text)}
+    .hero{padding:clamp(4.5rem,10vw,8rem) 0 3rem}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end}
+    .tag{display:inline-flex;align-items:center;gap:.65rem;padding:.55rem .9rem;border:1px solid rgba(225,29,51,.35);background:var(--accent-soft);border-radius:var(--radius-full);color:#ff8f9a;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em}
+    .tag::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px rgba(225,29,51,.55)}
+    h1,h2,h3,p{margin:0} h1,h2{font-family:var(--font-display);font-weight:400;line-height:.95;text-transform:uppercase;letter-spacing:.03em} h1{font-size:clamp(4rem,8vw,8rem)} h2{font-size:clamp(2.2rem,4vw,4rem)} h3{font-size:var(--text-lg);font-weight:800}
+    .headline{max-width:10ch;margin-top:1rem}.headline .stroke{color:transparent;-webkit-text-stroke:1px rgba(244,239,231,.5)} .lede{max-width:60ch;color:var(--muted);margin:1.25rem 0 1.5rem;font-size:var(--text-lg)}
+    .hero-panel,.panel,.timeline,.contact{background:linear-gradient(180deg,rgba(255,255,255,.02),transparent),var(--surface);border:1px solid var(--border);box-shadow:var(--shadow)}
+    .hero-panel{border-radius:32px;padding:1.5rem;position:relative;overflow:hidden}.hero-panel:after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle, rgba(225,29,51,.28), transparent 65%)}
+    .hero-photo{aspect-ratio:4/5;border-radius:24px;background:linear-gradient(180deg,rgba(225,29,51,.18),transparent 30%),linear-gradient(135deg,#2b2c34,#0d0d0f);display:grid;place-items:end start;padding:1.2rem;border:1px solid rgba(255,255,255,.06)}
+    .hero-photo-text{font-family:var(--font-display);font-size:clamp(2.5rem,4vw,4rem);line-height:.9}.hero-photo-text span{display:block;color:var(--accent)}
+    .mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem;margin-top:1rem}.mini{padding:1rem;border-radius:18px;background:var(--surface-2);border:1px solid var(--border)} .mini .k{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--faint);margin-bottom:.4rem}.mini .v{font-weight:700}
+    section{padding:3rem 0}.section-top{display:grid;grid-template-columns:.75fr 1.25fr;gap:1.5rem;align-items:end;margin-bottom:1.5rem}.section-copy{color:var(--muted);max-width:62ch}
+    .achievement-grid,.dual{display:grid;gap:1rem}.achievement-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.dual{grid-template-columns:1fr 1fr}
+    .panel{border-radius:26px;padding:1.3rem;position:relative;overflow:hidden}.panel .num{font-family:var(--font-display);font-size:clamp(3rem,5vw,5rem);color:var(--accent);line-height:.9;margin-bottom:.5rem}.panel.ribbon:before{content:"";position:absolute;top:0;right:0;width:90px;height:90px;background:linear-gradient(135deg,transparent 50%, rgba(225,29,51,.28) 50%)}
+    .skills{display:flex;flex-wrap:wrap;gap:.75rem}.skill{padding:.85rem 1rem;border-radius:999px;background:rgba(225,29,51,.08);border:1px solid rgba(225,29,51,.2);font-size:var(--text-sm)}
+    .timeline-wrap{display:grid;gap:1rem}.timeline{padding:1.4rem;border-radius:26px;position:relative}.timeline:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--accent),transparent)} .timeline-inner{padding-left:1rem}.meta{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--faint);font-size:var(--text-sm);margin:.65rem 0 1rem}.timeline ul{padding-left:1.15rem;margin:0;color:var(--muted)} .timeline li+li{margin-top:.45rem}
+    .contact{border-radius:30px;padding:1.5rem;display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}.contact-list{display:grid;gap:.8rem}.contact-link{padding:.95rem 1rem;border-radius:18px;background:var(--surface-2);border:1px solid var(--border)}
+    .footer{padding:2rem 0 3rem;color:var(--faint);font-size:var(--text-sm)}
+    @media (max-width:980px){.hero-grid,.section-top,.achievement-grid,.dual,.contact{grid-template-columns:1fr}} @media (max-width:760px){.nav{flex-direction:column;align-items:flex-start}.links{gap:.8rem}.mini-grid{grid-template-columns:1fr}.headline{max-width:100%}.cta-row{flex-wrap:wrap}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
+  <a href="#main" class="skip">Skip to content</a>
+  <header class="header">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Khaled Driss home">
-        <span class="brand-mark" aria-hidden="true">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
           <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 36V12h4v11.5L25 12h5.4L18.6 24l12.8 12H26l-12-11.4V36h-4Z" fill="currentColor"/>
-            <path d="M33.5 12h4v24h-4" fill="currentColor"/>
+            <path d="M10 36V12h5v10.6L25.3 12H32L20.2 24 33 36h-6.8L15 25.6V36h-5Z" fill="currentColor"/>
+            <path d="M35 12h4v24h-4" fill="currentColor"/>
           </svg>
-        </span>
-        <span>Khaled Driss</span>
-      </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#profile">Profile</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#experience">Experience</a>
+        </div>
+        <div>
+          <div class="brand-name">Khaled Driss</div>
+          <div class="brand-sub">Creative CV / Digital Growth Profile</div>
+        </div>
+      </div>
+      <nav class="links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#impact">Impact</a>
+        <a href="#journey">Journey</a>
         <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="nav-actions">
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">◐</button>
-        <a class="button" href="mailto:Driss6Khaled@gmail.com">Contact</a>
+      <div class="cta-row">
+        <button type="button" class="theme" data-theme-toggle aria-label="Switch theme">◐</button>
+        <a class="btn" href="mailto:Driss6Khaled@gmail.com">Hire / Contact</a>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
+    <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">E-commerce · Digital Marketing · Web Operations</span>
-          <h1>Khaled Driss builds brands, manages digital channels, and turns online activity into measurable business growth.</h1>
-          <p class="lede">Results-driven e-commerce and digital operations professional with experience in website management, social media growth, content design, online sales support, and brand development across apparel, footwear, and service businesses.</p>
-          <div class="nav-actions">
-            <a class="button" href="#experience">View experience</a>
-            <a class="button-ghost" href="https://linkedin.com/in/dsix" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <div class="tag">Branding · E-commerce · Visual Direction</div>
+          <h1 class="headline">Build <span class="stroke">bold</span> digital presence that sells.</h1>
+          <p class="lede">A more creative version of the CV website, built to present Khaled Driss as a multi-skilled operator across e-commerce, social growth, campaign support, content design, and web execution.</p>
+          <div class="cta-row">
+            <a href="#journey" class="btn">See the journey</a>
+            <a href="https://linkedin.com/in/dsix" target="_blank" rel="noopener noreferrer" class="btn-alt">LinkedIn</a>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Quick profile">
-          <h2 style="margin-bottom:1.25rem">Quick profile</h2>
-          <div class="quick-grid">
-            <div><div class="label">Current role</div><div class="value">Web Designer & Community Manager, STARWEAR</div></div>
-            <div><div class="label">Location</div><div class="value">El Eulma / Sétif, Algeria</div></div>
-            <div><div class="label">Focus</div><div class="value">E-commerce, brand growth, digital execution</div></div>
-            <div><div class="label">Languages</div><div class="value">Arabic, French, English</div></div>
+        <aside class="hero-panel">
+          <div class="hero-photo" role="img" aria-label="Creative profile panel for Khaled Driss">
+            <div class="hero-photo-text">Khaled <span>Driss</span></div>
+          </div>
+          <div class="mini-grid">
+            <div class="mini"><div class="k">Current role</div><div class="v">STARWEAR</div></div>
+            <div class="mini"><div class="k">Specialty</div><div class="v">Growth + Visuals</div></div>
+            <div class="mini"><div class="k">Market</div><div class="v">Apparel & Footwear</div></div>
+            <div class="mini"><div class="k">Base</div><div class="v">Sétif, Algeria</div></div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="profile">
+    <section id="about">
       <div class="container">
-        <div class="section-head">
-          <h2>Professional profile</h2>
-          <p class="section-copy">The strongest positioning for this CV is not only web development or graphic design. It is the combination of digital marketing, e-commerce operations, visual content work, and customer-facing business execution, which makes the profile more relevant for modern commerce and brand roles.</p>
+        <div class="section-top">
+          <h2>Creative positioning</h2>
+          <p class="section-copy">This version is intentionally more visual and expressive than the earlier draft. It uses a black, red, and off-white system, large display typography, layered cards, and stronger rhythm to match a creative personal brand while still keeping the CV clear for recruiters and clients.</p>
         </div>
-        <div class="two-col">
-          <article class="card">
-            <h3>What stands out</h3>
-            <p class="muted">Hands-on experience across online store management, social media growth, campaign support, brand identity, and commercial operations. This creates a practical profile for companies that need execution, not only theory.</p>
-          </article>
-          <article class="card">
-            <h3>Best-fit roles</h3>
-            <p class="muted">E-commerce manager, digital marketing specialist, community manager, brand operations coordinator, or web content and catalog manager.</p>
-          </article>
+        <div class="dual">
+          <article class="panel"><h3>Profile</h3><p class="section-copy">Digital marketing and e-commerce professional with technical, design, and business execution skills. Strong fit for roles that need both taste and action.</p></article>
+          <article class="panel"><h3>Best use</h3><p class="section-copy">Portfolio CV, freelance profile, partnership page, or public-facing personal brand website.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="achievements">
+    <section id="impact">
       <div class="container">
-        <div class="section-head">
-          <h2>Selected achievements</h2>
-          <p class="section-copy">The numbers below make the profile more credible because they show audience growth, product sales, and customer support at scale.</p>
+        <div class="section-top">
+          <h2>Impact in numbers</h2>
+          <p class="section-copy">The layout below makes the measurable wins feel more like headline moments instead of standard CV bullet points.</p>
         </div>
-        <div class="stats">
-          <article class="card"><div class="stat-num" data-target="70000">0</div><h3>Organic audience growth</h3><p class="muted">Built the Jwaki Brand Facebook page to more than 70,000 followers.</p></article>
-          <article class="card"><div class="stat-num" data-target="1000">0</div><h3>Products sold</h3><p class="muted">Managed online sales that resulted in more than 1,000 products sold.</p></article>
-          <article class="card"><div class="stat-num" data-target="1200">0</div><h3>Pilgrims supported</h3><p class="muted">Helped coordinate Umrah packages for more than 1,200 pilgrims in one season.</p></article>
+        <div class="achievement-grid">
+          <article class="panel ribbon"><div class="num" data-target="70000">0</div><h3>Followers built</h3><p class="section-copy">Organic Facebook growth for Jwaki Brand.</p></article>
+          <article class="panel ribbon"><div class="num" data-target="1000">0</div><h3>Products sold</h3><p class="section-copy">Managed e-commerce activity that supported more than 1,000 sales.</p></article>
+          <article class="panel ribbon"><div class="num" data-target="1200">0</div><h3>Pilgrims served</h3><p class="section-copy">Supported Umrah package coordination at scale in one season.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="experience">
+    <section id="journey">
       <div class="container">
-        <div class="section-head">
-          <h2>Experience</h2>
-          <p class="section-copy">Each role adds a different layer: digital execution, brand growth, customer coordination, and operational discipline. Together they show a profile that can support both marketing and business functions.</p>
+        <div class="section-top">
+          <h2>Career journey</h2>
+          <p class="section-copy">Instead of a standard list, the experience is framed as a progression from service operations to brand building and digital growth.</p>
         </div>
-        <div class="experience">
-          <article class="timeline-item">
-            <h3>Web Designer & Community Manager — STARWEAR</h3>
-            <div class="role-meta"><span>January 2025 – Present</span><span>El Eulma, Algeria</span></div>
-            <ul>
-              <li>Lead the design and development of the company’s e-commerce website.</li>
-              <li>Manage the online product catalog and optimize product visuals.</li>
-              <li>Execute social media activity to improve visibility and engagement.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <h3>Travel Consultant — El Zaim Tourism</h3>
-            <div class="role-meta"><span>September 2024 – January 2025</span><span>El Eulma, Algeria</span></div>
-            <ul>
-              <li>Coordinated Umrah packages and supported more than 1,200 pilgrims during one season.</li>
-              <li>Created promotional materials to support package marketing.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <h3>Founder & E-commerce Manager — Jwaki Brand</h3>
-            <div class="role-meta"><span>2022 – 2023</span><span>El Eulma, Algeria</span></div>
-            <ul>
-              <li>Founded the brand and built the visual identity for the online store.</li>
-              <li>Managed online sales and digital campaigns that supported more than 1,000 product sales.</li>
-              <li>Grew the brand’s Facebook page organically to more than 70,000 followers.</li>
-            </ul>
-          </article>
-          <article class="timeline-item">
-            <h3>Umrah Services Specialist — Inemed Travel Agency</h3>
-            <div class="role-meta"><span>2018 – 2022</span><span>El Eulma, Algeria</span></div>
-            <ul>
-              <li>Managed bookings, logistics, and visa processing for Umrah services.</li>
-              <li>Served as a main point of contact for pilgrims and their families.</li>
-            </ul>
-          </article>
+        <div class="timeline-wrap">
+          <article class="timeline"><div class="timeline-inner"><h3>Web Designer & Community Manager — STARWEAR</h3><div class="meta"><span>January 2025 – Present</span><span>El Eulma, Algeria</span></div><ul><li>Lead the company’s e-commerce website work.</li><li>Manage catalog visuals and online presentation.</li><li>Support social activity and digital brand visibility.</li></ul></div></article>
+          <article class="timeline"><div class="timeline-inner"><h3>Travel Consultant — El Zaim Tourism</h3><div class="meta"><span>September 2024 – January 2025</span><span>El Eulma, Algeria</span></div><ul><li>Coordinated Umrah packages for more than 1,200 pilgrims in one season.</li><li>Created promotional material for commercial campaigns.</li></ul></div></article>
+          <article class="timeline"><div class="timeline-inner"><h3>Founder & E-commerce Manager — Jwaki Brand</h3><div class="meta"><span>2022 – 2023</span><span>El Eulma, Algeria</span></div><ul><li>Built the brand identity and managed the e-commerce activity.</li><li>Launched campaigns that supported more than 1,000 product sales.</li><li>Grew the Facebook page organically past 70,000 followers.</li></ul></div></article>
+          <article class="timeline"><div class="timeline-inner"><h3>Umrah Services Specialist — Inemed Travel Agency</h3><div class="meta"><span>2018 – 2022</span><span>El Eulma, Algeria</span></div><ul><li>Managed booking, logistics, and visa support.</li><li>Worked directly with pilgrims and families as a main point of contact.</li></ul></div></article>
         </div>
       </div>
     </section>
 
     <section id="skills">
       <div class="container">
-        <div class="section-head">
-          <h2>Core skills</h2>
-          <p class="section-copy">The skills are grouped to match commercial hiring needs: digital growth, content execution, web support, and practical business tools.</p>
+        <div class="section-top">
+          <h2>Skill blocks</h2>
+          <p class="section-copy">The skills are shown as branded capsules to make the page feel more like a modern creative profile than a document copy pasted onto the web.</p>
         </div>
-        <div class="card">
-          <div class="chips">
-            <span class="chip">E-commerce operations</span>
-            <span class="chip">Product catalog management</span>
-            <span class="chip">Meta Business Suite</span>
-            <span class="chip">Facebook Ads Manager</span>
-            <span class="chip">HTML5</span>
-            <span class="chip">CSS3</span>
-            <span class="chip">JavaScript</span>
-            <span class="chip">SQL</span>
-            <span class="chip">Adobe Photoshop</span>
-            <span class="chip">Adobe Illustrator</span>
-            <span class="chip">Blender</span>
-            <span class="chip">Microsoft Office</span>
-            <span class="chip">LaTeX</span>
-            <span class="chip">Amadeus Selling Platform</span>
+        <div class="panel">
+          <div class="skills">
+            <span class="skill">E-commerce Operations</span>
+            <span class="skill">Meta Business Suite</span>
+            <span class="skill">Facebook Ads Manager</span>
+            <span class="skill">Catalog Management</span>
+            <span class="skill">Social Media Strategy</span>
+            <span class="skill">Brand Identity Support</span>
+            <span class="skill">HTML / CSS / JavaScript</span>
+            <span class="skill">Adobe Photoshop</span>
+            <span class="skill">Adobe Illustrator</span>
+            <span class="skill">Blender</span>
+            <span class="skill">Microsoft Office</span>
+            <span class="skill">Arabic / French / English</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="container">
-        <div class="section-head">
-          <h2>Education</h2>
-          <p class="section-copy">The academic background supports both the technical side of the profile and the digital execution work shown in professional experience.</p>
-        </div>
-        <div class="two-col">
-          <article class="card">
-            <h3>Master in Data Engineering and Web Technologies</h3>
-            <p class="muted">Université Farhat Abbas, Sétif · 2018 – 2020</p>
-          </article>
-          <article class="card">
-            <h3>IT Degree</h3>
-            <p class="muted">Université Farhat Abbas, Sétif · 2015 – 2018</p>
-          </article>
-        </div>
-        <div class="card" style="margin-top:1.25rem">
-          <h3>Certificate in Digital Marketing</h3>
-          <p class="muted">ILIMA-Formation & Consulting, Batna · 2021</p>
         </div>
       </div>
     </section>
 
     <section id="contact">
       <div class="container">
-        <div class="contact-card">
+        <div class="contact">
           <div>
-            <h2>Contact</h2>
-            <p class="section-copy">This version works as a stronger online CV because it presents a focused business profile, cleaner hierarchy, and easier scanning for recruiters or partners.</p>
+            <h2>Ready for publishing</h2>
+            <p class="section-copy">This file is designed to feel more personal, creative, and memorable while still reading like a serious professional CV website.</p>
           </div>
-          <div class="contact-links">
-            <a href="mailto:Driss6Khaled@gmail.com">Driss6Khaled@gmail.com</a>
-            <a href="tel:+213551117118">+213551117118</a>
-            <a href="https://linkedin.com/in/dsix" target="_blank" rel="noopener noreferrer">linkedin.com/in/dsix</a>
-            <span class="muted">Sétif / El Eulma, Algeria</span>
+          <div class="contact-list">
+            <a class="contact-link" href="mailto:Driss6Khaled@gmail.com">Driss6Khaled@gmail.com</a>
+            <a class="contact-link" href="tel:+213551117118">+213551117118</a>
+            <a class="contact-link" href="https://linkedin.com/in/dsix" target="_blank" rel="noopener noreferrer">linkedin.com/in/dsix</a>
+            <div class="contact-link">Sétif / El Eulma, Algeria</div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">Designed as a focused CV website for Khaled Driss.</div>
-  </footer>
+  <footer class="footer"><div class="container">Creative CV concept for Khaled Driss.</div></footer>
 
   <script>
-    (function(){
+    (() => {
       const root = document.documentElement;
-      const btn = document.querySelector('[data-theme-toggle]');
-      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const toggle = document.querySelector('[data-theme-toggle]');
+      let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       root.setAttribute('data-theme', theme);
-      btn.textContent = theme === 'dark' ? '☀' : '◐';
-      btn.addEventListener('click', () => {
+      toggle.textContent = theme === 'dark' ? '☀' : '◐';
+      toggle.addEventListener('click', () => {
         theme = theme === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', theme);
-        btn.textContent = theme === 'dark' ? '☀' : '◐';
+        toggle.textContent = theme === 'dark' ? '☀' : '◐';
       });
-      const nums = document.querySelectorAll('[data-target]');
-      const io = new IntersectionObserver(entries => {
+      const items = document.querySelectorAll('[data-target]');
+      const obs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
           const el = entry.target;
           const target = Number(el.dataset.target);
-          let n = 0;
-          const step = Math.max(1, Math.ceil(target / 60));
+          let value = 0;
+          const step = Math.max(1, Math.ceil(target / 55));
           const timer = setInterval(() => {
-            n += step;
-            if (n >= target) {
+            value += step;
+            if (value >= target) {
               el.textContent = target.toLocaleString();
               clearInterval(timer);
             } else {
-              el.textContent = n.toLocaleString();
+              el.textContent = value.toLocaleString();
             }
-          }, 22);
-          io.unobserve(el);
+          }, 24);
+          obs.unobserve(el);
         });
-      }, {threshold: .35});
-      nums.forEach(n => io.observe(n));
+      }, { threshold: 0.35 });
+      items.forEach(i => obs.observe(i));
     })();
   </script>
 </body>
